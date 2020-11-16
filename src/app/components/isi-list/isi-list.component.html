@@ -1,1 +1,15 @@
-<p>isi-list works!</p>
+<div class="container">
+  <p *ngIf="Isi.length <= 0" class="no-data text-center">No indexes</p>
+
+  <ul *ngFor="let isi of Isi; let i = index">
+    <li>
+      {{isi._id}}
+      <span class="edit" [routerLink]="['/edit-index/', isi._id]">
+        <button type="button" class="btn btn-success btn-sm">Edit</button>
+      </span>
+      <span class="delete" (click)="removeIsi(isi, i)">
+        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+      </span>
+    </li>
+  </ul>
+</div>

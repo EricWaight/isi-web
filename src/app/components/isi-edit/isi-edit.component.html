@@ -1,1 +1,94 @@
-<p>isi-edit works!</p>
+<div>
+  <h3>
+    Edit Insomnia Index
+  </h3>
+
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>
+        Difficulty falling asleep:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q1"
+      >
+
+      <label>
+        Difficulty staying asleep:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q2"
+      >
+
+      <label>
+        Problems waking up too early:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q3"
+      >
+
+      <label>
+        How SATISFIED/DISSATISFIED are you with your CURRENT sleep pattern?:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q4"
+      >
+
+      <label>
+        How NOTICEABLE to others do you think your sleep problem is in terms of impairing the quality of your life?:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q5"
+      >
+
+      <label>
+        How WORRIED/DISTRESSED are you about your current sleep problem?:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q6"
+      >
+
+      <label>
+        To what extent do you consider your sleep problem to INTERFERE with your daily functioning (e.g. daytime
+        fatigue, mood, ability to function at work/daily chores, concentration, memory, mood, etc.) CURRENTLY?:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q7"
+      >
+
+      <label>
+        Total:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="total"
+      >
+    </div>
+
+    <button type="submit">
+      Update
+    </button>
+  </form>
+</div>

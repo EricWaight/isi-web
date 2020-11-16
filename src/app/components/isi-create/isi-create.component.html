@@ -1,1 +1,103 @@
-<p>isi-create works!</p>
+<div>
+  <h3>
+    Insomnia Severity Index
+  </h3>
+
+  <p>
+    The Insomnia Severity Index has seven questions. The seven answers are added up to get a total score. When you have
+    your total score, look at the 'Guidelines for Scoring/Interpretation' below to see where your sleep difficulty fits.
+  </p>
+
+  <form [formGroup]="isiForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>
+        Difficulty falling asleep:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q1"
+      >
+
+      <!-- <span *ngIf="submitted && isiForm.q1.errors.required">
+        Field is required
+      </span> -->
+
+      <label>
+        Difficulty staying asleep:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q2"
+      >
+
+      <label>
+        Problems waking up too early:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q3"
+      >
+
+      <label>
+        How SATISFIED/DISSATISFIED are you with your CURRENT sleep pattern?:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q4"
+      >
+
+      <label>
+        How NOTICEABLE to others do you think your sleep problem is in terms of impairing the quality of your life?:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q5"
+      >
+
+      <label>
+        How WORRIED/DISTRESSED are you about your current sleep problem?:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q6"
+      >
+
+      <label>
+        To what extent do you consider your sleep problem to INTERFERE with your daily functioning (e.g. daytime
+        fatigue, mood, ability to function at work/daily chores, concentration, memory, mood, etc.) CURRENTLY?:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="q7"
+      >
+
+      <label>
+        Total:
+      </label>
+
+      <input
+        type="number"
+        class="form-control"
+        formControlName="total"
+      >
+    </div>
+
+    <button type="submit">
+      Save
+    </button>
+  </form>
+</div>

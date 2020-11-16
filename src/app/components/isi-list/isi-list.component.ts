@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { ApiService } from '../../services/api.service'
 
 @Component({
   selector: 'app-isi-list',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core'
 })
 export class IsiListComponent implements OnInit {
 
-  constructor() { }
+  Isi:any = [];
 
-  ngOnInit(): void {
+  constructor(private apiService: ApiService) {
+    this.readIsi()
   }
 
+  ngOnInit(): void {}
+
+  readIsi(){
+    this.apiService.getIsis().subscribe((data) => {
+     this.Isi = data
+    })
+  }
+
+  removeIsi(isi, index) {
+    if(window.confirm('Are you sure?')) {
+        this.apiService.deleteIsi(isi._id).subscribe((data) => {
+          this.Isi.splice(index, 1)
+        }
+      )
+    }
+  }
 }
