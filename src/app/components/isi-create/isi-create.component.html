@@ -8,78 +8,131 @@
     your total score, look at the 'Guidelines for Scoring/Interpretation' below to see where your sleep difficulty fits.
   </p>
 
+  <p>
+    Please rate the CURRENT (i.e. LAST 2 WEEKS) SEVERITY of your insomnia problem(s).
+  </p>
+
   <form [formGroup]="isiForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>
         Difficulty falling asleep:
+        <input
+          type="number"
+          class="form-control"
+          formControlName="q1"
+          min="0"
+          max="4"
+        >
       </label>
 
-      <input
-        type="number"
-        class="form-control"
-        formControlName="q1"
+      <span
+        *ngIf="submitted && createForm.q1.errors?.required"
       >
+        This field is required
+      </span>
 
       <label>
         Difficulty staying asleep:
+        <input
+          type="number"
+          class="form-control"
+          formControlName="q2"
+          min="0"
+          max="4"
+        >
       </label>
 
-      <input
-        type="number"
-        class="form-control"
-        formControlName="q2"
+      <span
+        *ngIf="submitted && createForm.q2.errors?.required"
       >
+        This field is required
+      </span>
 
       <label>
         Problems waking up too early:
+        <input
+          type="number"
+          class="form-control"
+          formControlName="q3"
+          min="0"
+          max="4"
+        >
       </label>
 
-      <input
-        type="number"
-        class="form-control"
-        formControlName="q3"
+      <span
+        *ngIf="submitted && createForm.q3.errors?.required"
       >
+        This field is required
+      </span>
 
       <label>
         How SATISFIED/DISSATISFIED are you with your CURRENT sleep pattern?:
+        <input
+          type="number"
+          class="form-control"
+          formControlName="q4"
+          min="0"
+          max="4"
+        >
       </label>
 
-      <input
-        type="number"
-        class="form-control"
-        formControlName="q4"
+      <span
+        *ngIf="submitted && createForm.q4.errors?.required"
       >
+        This field is required
+      </span>
 
       <label>
         How NOTICEABLE to others do you think your sleep problem is in terms of impairing the quality of your life?:
+        <input
+          type="number"
+          class="form-control"
+          formControlName="q5"
+          min="0"
+          max="4"
+        >
       </label>
 
-      <input
-        type="number"
-        class="form-control"
-        formControlName="q5"
+      <span
+        *ngIf="submitted && createForm.q5.errors?.required"
       >
+        This field is required
+      </span>
 
       <label>
         How WORRIED/DISTRESSED are you about your current sleep problem?:
+        <input
+          type="number"
+          class="form-control"
+          formControlName="q6"
+          min="0"
+          max="4"
+        >
       </label>
 
-      <input
-        type="number"
-        class="form-control"
-        formControlName="q6"
+      <span
+        *ngIf="submitted && createForm.q6.errors?.required"
       >
+        This field is required
+      </span>
 
       <label>
         To what extent do you consider your sleep problem to INTERFERE with your daily functioning (e.g. daytime
         fatigue, mood, ability to function at work/daily chores, concentration, memory, mood, etc.) CURRENTLY?:
+        <input
+          type="number"
+          class="form-control"
+          formControlName="q7"
+          min="0"
+          max="4"
+        >
       </label>
 
-      <input
-        type="number"
-        class="form-control"
-        formControlName="q7"
+      <span
+        *ngIf="submitted && createForm.q7.errors?.required"
       >
+        This field is required
+      </span>
 
       <label>
         Total:
@@ -88,7 +141,8 @@
       <input
         type="number"
         class="form-control"
-        formControlName="total"
+        [value]="total"
+        disabled
       >
     </div>
 

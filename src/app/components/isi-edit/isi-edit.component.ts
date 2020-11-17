@@ -33,12 +33,11 @@ export class IsiEditComponent implements OnInit {
       q5: ['', [Validators.required]],
       q6: ['', [Validators.required]],
       q7: ['', [Validators.required]],
-      total: ['', [Validators.required]]
     })
   }
 
     // Getter to access form control
-    get myForm() {
+    get modifyForm() {
       return this.editForm.controls
     }
 
@@ -52,7 +51,6 @@ export class IsiEditComponent implements OnInit {
           q5: data['q5'],
           q6: data['q6'],
           q7: data['q7'],
-          total: data['total']
         })
       })
     }
@@ -66,19 +64,22 @@ export class IsiEditComponent implements OnInit {
         q5: ['', [Validators.required]],
         q6: ['', [Validators.required]],
         q7: ['', [Validators.required]],
-        total: ['', [Validators.required]]
       })
     }
 
-    onSubmit() {
+    get total() : number {
+      return this.editForm.value.q1 + this.editForm.value.q2 + this.editForm.value.q3 + this.editForm.value.q4 + this.editForm.value.q5 + this.editForm.value.q6 + this.editForm.value.q7
+    }
+
+    onSubmit() : void {
       this.submitted = true
       if (!this.editForm.valid) {
         console.log('There is a problem')
-        return false
+        return
       } else {
         if (window.confirm('Are you sure?')) {
           const id = this.actRoute.snapshot.paramMap.get('id')
-          this.apiService.updateIsi(id, this.editForm.value)
+          this.apiService.updateIsi(id, {...this.editForm.value, total: this.total})
             .subscribe(res => {
               this.router.navigateByUrl('/index-list')
               console.log('Index updated successfully!')
