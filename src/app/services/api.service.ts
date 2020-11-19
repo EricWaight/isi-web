@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 })
 export class ApiService {
 
-  baseUri = 'http://isi-api:5000/'
+  baseUri = 'http://isi-api:5000'
   headers = new HttpHeaders().set('Content-Type', 'application/json')
 
   constructor(private http: HttpClient) { }
