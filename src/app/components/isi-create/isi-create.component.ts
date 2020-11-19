@@ -62,7 +62,6 @@ export class IsiCreateComponent implements OnInit {
   }
 
   onSubmit() : void {
-    console.warn(this.isiForm.value)
     this.submitted = true
     if (!this.isiForm.valid) {
       console.log('There is a problem')
