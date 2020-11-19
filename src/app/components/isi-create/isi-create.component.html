@@ -8,8 +8,6 @@
     your total score, look at the 'Guidelines for Scoring/Interpretation' below to see where your sleep difficulty fits.
   </p>
 
-
-
   <form [formGroup]="isiForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <div class="group">
@@ -18,7 +16,7 @@
         </h4>
 
         <label>
-          Difficulty falling asleep:
+          1. Difficulty falling asleep:
         </label>
 
         <select
@@ -29,10 +27,6 @@
           <option *ngFor="let option of Q1Q3Scale" [ngValue]="option.value" (change)="changeOption($event)">{{option.label}}</option>
         </select>
 
-        <span *ngIf="createForm.q1.touched && createForm.q1.pristine">
-          Hey
-        </span>
-
         <span
           *ngIf="submitted && createForm.q1.errors?.required"
         >
@@ -40,7 +34,7 @@
         </span>
 
         <label>
-          Difficulty staying asleep:
+          2. Difficulty staying asleep:
         </label>
 
         <select
@@ -57,7 +51,7 @@
         </span>
 
         <label>
-          Problems waking up too early:
+          3. Problems waking up too early:
         </label>
 
         <select
@@ -75,7 +69,7 @@
       </div>
 
       <label>
-        How SATISFIED/DISSATISFIED are you with your CURRENT sleep pattern?:
+        4. How SATISFIED/DISSATISFIED are you with your CURRENT sleep pattern?:
       </label>
 
       <select
@@ -92,7 +86,7 @@
       </span>
 
       <label>
-        How NOTICEABLE to others do you think your sleep problem is in terms of impairing the quality of your life?:
+        5. How NOTICEABLE to others do you think your sleep problem is in terms of impairing the quality of your life?:
       </label>
 
       <select
@@ -109,7 +103,7 @@
       </span>
 
       <label>
-        How WORRIED/DISTRESSED are you about your current sleep problem?:
+        6. How WORRIED/DISTRESSED are you about your current sleep problem?:
       </label>
 
       <select
@@ -126,7 +120,7 @@
       </span>
 
       <label>
-        To what extent do you consider your sleep problem to INTERFERE with your daily functioning (e.g. daytime
+        7. To what extent do you consider your sleep problem to INTERFERE with your daily functioning (e.g. daytime
         fatigue, mood, ability to function at work/daily chores, concentration, memory, mood, etc.) CURRENTLY?:
       </label>
 
@@ -144,7 +138,7 @@
       </span>
 
       <label>
-        Total:
+        Your total score is:
       </label>
 
       <input
@@ -153,6 +147,38 @@
         disabled
       >
     </div>
+
+    <p
+      style="font-weight: bold;"
+    >
+      Guidelines for Scoring/Interpretation:
+    </p>
+
+    <p>
+      Add the scores for all seven items (questions 1 + 2 + 3 + 4 + 5 +6 + 7) = {{total}} your total score.
+    </p>
+
+    <p>
+      Total score categories:
+    </p>
+
+    <ul style="list-style: none; padding-inline-start: 15px;">
+      <li>
+        0–7 = No clinically significant insomnia
+      </li>
+
+      <li>
+        8–14 = Subthreshold insomnia
+      </li>
+
+      <li>
+        15–21 = Clinical insomnia (moderate severity)
+      </li>
+
+      <li>
+        22–28 = Clinical insomnia (severe)
+      </li>
+    </ul>
 
     <button
       type="submit"
