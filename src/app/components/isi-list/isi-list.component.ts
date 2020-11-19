@@ -4,7 +4,7 @@ import { ApiService } from '../../services/api.service'
 @Component({
   selector: 'app-isi-list',
   templateUrl: './isi-list.component.html',
-  styleUrls: ['./isi-list.component.scss']
+  styleUrls: ['./../../app.component.scss']
 })
 export class IsiListComponent implements OnInit {
 
@@ -14,6 +14,7 @@ export class IsiListComponent implements OnInit {
     this.readIsi()
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   ngOnInit(): void {}
 
   readIsi(){

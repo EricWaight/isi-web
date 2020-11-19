@@ -12,10 +12,10 @@ import { ApiService } from './services/api.service'
 
 @NgModule({
   declarations: [
-    AppComponent,
     IsiCreateComponent,
     IsiEditComponent,
-    IsiListComponent
+    IsiListComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

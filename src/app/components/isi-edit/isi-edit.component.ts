@@ -7,12 +7,17 @@ import { Isi } from '../../models/isi'
 @Component({
   selector: 'app-isi-edit',
   templateUrl: './isi-edit.component.html',
-  styleUrls: ['./isi-edit.component.scss']
+  styleUrls: ['./../../app.component.scss']
 })
 export class IsiEditComponent implements OnInit {
   submitted = false;
   editForm: FormGroup;
   isiData: Isi[];
+  Q1Q3Scale: any =[{label: 'None', value: 0}, {label: 'Mild', value: 1}, {label: 'Moderate', value: 2}, {label: 'Severe', value: 3}, {label: 'Very Severe', value: 4}]
+  Q4Scale: any =[{label: 'Very Satisfied', value: 0}, {label: 'Satisfied', value: 1}, {label: 'Moderately Satisfied', value: 2}, {label: 'Dissatisfied', value: 3}, {label: 'Very Dissatisfied', value: 4}]
+  Q5Scale: any =[{label: 'Not at all Noticable', value: 0}, {label: 'A Little', value: 1}, {label: 'Somewhat', value: 2}, {label: 'Much', value: 3}, {label: 'Very Much Noticeable', value: 4}]
+  Q6Scale: any =[{label: 'Not at all Worried', value: 0}, {label: 'A Little', value: 1}, {label: 'Somewhat', value: 2}, {label: 'Much', value: 3}, {label: 'Very Much Worried', value: 4}]
+  Q7Scale: any =[{label: 'Not at all Interfering', value: 0}, {label: 'A Little', value: 1}, {label: 'Somewhat', value: 2}, {label: 'Much', value: 3}, {label: 'Very Much Interfering', value: 4}]
 
   constructor(
     public fb: FormBuilder,

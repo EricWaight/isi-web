@@ -2,11 +2,10 @@ import { Component, OnInit, NgZone } from '@angular/core'
 import { Router } from '@angular/router'
 import { ApiService } from './../../services/api.service'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
-
 @Component({
   selector: 'app-isi-create',
   templateUrl: './isi-create.component.html',
-  styleUrls: ['./isi-create.component.scss']
+  styleUrls: ['./../../app.component.scss']
 })
 
 export class IsiCreateComponent implements OnInit {
@@ -21,6 +20,11 @@ export class IsiCreateComponent implements OnInit {
   q6: number
   q7: number
 
+  Q1Q3Scale: any =[{label: 'None', value: 0}, {label: 'Mild', value: 1}, {label: 'Moderate', value: 2}, {label: 'Severe', value: 3}, {label: 'Very Severe', value: 4}]
+  Q4Scale: any =[{label: 'Very Satisfied', value: 0}, {label: 'Satisfied', value: 1}, {label: 'Moderately Satisfied', value: 2}, {label: 'Dissatisfied', value: 3}, {label: 'Very Dissatisfied', value: 4}]
+  Q5Scale: any =[{label: 'Not at all Noticable', value: 0}, {label: 'A Little', value: 1}, {label: 'Somewhat', value: 2}, {label: 'Much', value: 3}, {label: 'Very Much Noticeable', value: 4}]
+  Q6Scale: any =[{label: 'Not at all Worried', value: 0}, {label: 'A Little', value: 1}, {label: 'Somewhat', value: 2}, {label: 'Much', value: 3}, {label: 'Very Much Worried', value: 4}]
+  Q7Scale: any =[{label: 'Not at all Interfering', value: 0}, {label: 'A Little', value: 1}, {label: 'Somewhat', value: 2}, {label: 'Much', value: 3}, {label: 'Very Much Interfering', value: 4}]
 
   constructor(
     public fb: FormBuilder,
@@ -38,7 +42,7 @@ export class IsiCreateComponent implements OnInit {
 
   mainForm() {
     this.isiForm = this.fb.group({
-      q1: [0, [Validators.required, Validators.minLength(0), Validators.maxLength(4)]],
+      q1: [0, [Validators.required]],
       q2: [0, [Validators.required]],
       q3: [0, [Validators.required]],
       q4: [0, [Validators.required]],
