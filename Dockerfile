@@ -16,7 +16,7 @@ FROM nginx
 
 RUN rm -f /etc/nginx/conf.d/*
 COPY ./docker/nginx/ /etc/nginx/conf.d/
-COPY --from=build /project/dist/isi-web  /www/data/isi/
+COPY --from=build /project/dist  /www/data/isi/
 
 EXPOSE 80
 
